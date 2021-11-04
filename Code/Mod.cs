@@ -14,6 +14,16 @@ namespace ToggleEdgeScrolling
 
 
         /// <summary>
+        /// Called by the game when the mod is enabled.
+        /// </summary>
+        public void OnEnabled()
+        {
+            // Load the settings file.
+            ModSettings.Load();
+        }
+
+
+        /// <summary>
         /// Called by the game when the mod options panel is setup.
         /// </summary>
         public void OnSettingsUI(UIHelperBase helper)
