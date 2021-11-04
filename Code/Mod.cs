@@ -1,0 +1,31 @@
+﻿using ICities;
+using ColossalFramework.UI;
+
+
+namespace ToggleEdgeScrolling
+{
+    public class TESMod : IUserMod
+    {
+        public static string ModName => "Toggle Edge Scrolling";
+        public static string Version => "1.0.0";
+
+        public string Name => ModName + " " + Version;
+        public string Description => Translations.Translate("TES_DESC");
+
+
+        /// <summary>
+        /// Called by the game when the mod options panel is setup.
+        /// </summary>
+        public void OnSettingsUI(UIHelperBase helper)
+        {
+            // Language options.
+            UIHelperBase languageGroup = helper.AddGroup(Translations.Translate("TRN_CHOICE"));
+            UIDropDown languageDropDown = (UIDropDown)languageGroup.AddDropdown(Translations.Translate("TRN_CHOICE"), Translations.LanguageList, Translations.Index, (value) => { Translations.Index = value; ModSettings.Save(); });
+            languageDropDown.autoSize = false;
+            languageDropDown.width = 270f;
+
+            // Tool activation hotkey.
+            languageDropDown.parent.parent.gameObject.AddComponent<OptionsKeymapping>();
+        }
+    }
+}

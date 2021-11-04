@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Language UniqueName="en" ReadableName="English">
+  <Translations>
+    <Translation ID="TES_NAM" String="Toggle edge scrolling." />
+    <Translation ID="TES_DESC" String="Adds a hotkey and UUI button to toggle edge scrolling in-game." />
+    <Translation ID="TRN_CHOICE" String="Set language" />
+    <Translation ID="TRN_SYS" String="Use system language" />
+    <Translation ID="KEY_KEY" String="Hotkey" />
+    <Translation ID="KEY_PRS" String="Press any key" />
+  </Translations>
+</Language>
