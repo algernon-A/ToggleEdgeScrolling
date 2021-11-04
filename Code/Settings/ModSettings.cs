@@ -20,7 +20,7 @@ namespace ToggleEdgeScrolling
 
         // SavedInputKey reference for communicating with UUI.
         [XmlIgnore]
-        private static readonly SavedInputKey uuiSavedKey = new SavedInputKey("BOB hotkey", "BOB hotkey", key: KeyCode.S, control: false, shift: false, alt: true, false);
+        private static readonly SavedInputKey uuiSavedKey = new SavedInputKey("BOB hotkey", "BOB hotkey", key: KeyCode.S, control: false, shift: true, alt: true, false);
 
 
         // Language.
