@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Language UniqueName="de" ReadableName="Deutsch">
+  <Translations>
+    <Translation ID="TES_NAM" String="Toggle Edge Scrolling" />
+    <Translation ID="TES_DESC" String="Fügt ein Tastenkürzel und einen UUI Button und das Rand-Scrollen ingame an- und auszuschalten." />
+    <Translation ID="TRN_CHOICE" String="Sprache einstellen" />
+    <Translation ID="TRN_SYS" String="Systemsprache verwenden" />
+    <Translation ID="KEY_KEY" String="Tastenkürzel" />
+    <Translation ID="KEY_PRS" String="Drücke eine beliebige Taste" />
+  </Translations>
+</Language>
