@@ -2,7 +2,7 @@
 <Language UniqueName="es" ReadableName="Español">
   <Translations>
     <Translation ID="TES_NAM" String="Toggle Edge Scrolling" />
-    <Translation ID="TES_DESC" String="Agrega un atajo y botón a UUI para cambiar el edge scrolling en juego." />
+    <Translation ID="TES_DESC" String="Agrega un atajo y botón a UUI para cambiar el desplazamiento en el margen en juego." />
     <Translation ID="TRN_CHOICE" String="Elegir idioma" />
     <Translation ID="TRN_SYS" String="Usa el idioma del juego" />
     <Translation ID="KEY_KEY" String="Atajo" />
