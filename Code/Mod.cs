@@ -36,6 +36,9 @@ namespace ToggleEdgeScrolling
 
             // Tool activation hotkey.
             languageDropDown.parent.parent.gameObject.AddComponent<OptionsKeymapping>();
+
+            // Disable scrolling on load.
+            helper.AddCheckbox(Translations.Translate("TES_OPT_DOS"), ModSettings.disableOnStart, (value) => { ModSettings.disableOnStart = value; ModSettings.Save(); });
         }
     }
 }

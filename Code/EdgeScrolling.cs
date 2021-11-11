@@ -27,6 +27,9 @@ namespace ToggleEdgeScrolling
                 // Set reference.
                 edgeScrollSavedBool = savedBool;
 
+                // Disable edge scrolling on startup, if we're doing that.
+                savedBool.value &= !ModSettings.disableOnStart;
+
                 // Add UUI button.
                 uuiButton = UUIHelpers.RegisterCustomButton(
                     name: TESMod.ModName,
@@ -37,7 +40,7 @@ namespace ToggleEdgeScrolling
                     //hotkeys: new UUIHotKeys { ActivationKey = ModSettings.ToggleSavedKey }
                     );
 
-                // Set initial state.
+                // Set UUI button initial state.
                 uuiButton.IsPressed = edgeScrollSavedBool;
 
                 // Activate hotkey.

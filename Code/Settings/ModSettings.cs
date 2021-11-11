@@ -13,7 +13,7 @@ namespace ToggleEdgeScrolling
 	[XmlRoot("ToggleEdgeScrolling")]
     public class ModSettings
     {
-        // Settings file name
+        // Settings file name.
         [XmlIgnore]
         private static readonly string SettingsFileName = "ToggleEdgeScrolling.xml";
 
@@ -21,6 +21,10 @@ namespace ToggleEdgeScrolling
         // SavedInputKey reference for communicating with UUI.
         [XmlIgnore]
         private static readonly SavedInputKey uuiSavedKey = new SavedInputKey("Toggle Edge Srolling hotkey", "Toggle Edge Srolling hotkey", key: KeyCode.S, control: false, shift: true, alt: true, false);
+
+        // Automatically disable edge scrolling on game load.
+        [XmlIgnore]
+        internal static bool disableOnStart = false;
 
 
         // Language.
@@ -53,6 +57,16 @@ namespace ToggleEdgeScrolling
                 uuiSavedKey.Shift = value.shift;
                 uuiSavedKey.Alt = value.alt;
             }
+        }
+        /// <summary>
+        // Automatically disable edge scrolling on load.
+        /// </summary>
+        [XmlElement("DisableOnStart")]
+        public bool DisableOnStart
+        {
+            get => disableOnStart;
+
+            set => disableOnStart = value;
         }
 
 
