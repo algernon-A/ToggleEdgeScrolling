@@ -20,7 +20,7 @@ namespace ToggleEdgeScrolling
 
         // SavedInputKey reference for communicating with UUI.
         [XmlIgnore]
-        private static readonly SavedInputKey uuiSavedKey = new SavedInputKey("BOB hotkey", "BOB hotkey", key: KeyCode.S, control: false, shift: true, alt: true, false);
+        private static readonly SavedInputKey uuiSavedKey = new SavedInputKey("Toggle Edge Srolling hotkey", "Toggle Edge Srolling hotkey", key: KeyCode.S, control: false, shift: true, alt: true, false);
 
 
         // Language.
@@ -90,7 +90,7 @@ namespace ToggleEdgeScrolling
                     using (StreamReader reader = new StreamReader(SettingsFileName))
                     {
                         XmlSerializer xmlSerializer = new XmlSerializer(typeof(ModSettings));
-                        if (!(xmlSerializer.Deserialize(reader) is ModSettings ZoningModSettingsFile))
+                        if (!(xmlSerializer.Deserialize(reader) is ModSettings settingsFile))
                         {
                             Logging.Error("couldn't deserialize settings file");
                         }
