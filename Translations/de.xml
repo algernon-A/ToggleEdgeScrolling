@@ -3,6 +3,7 @@
   <Translations>
     <Translation ID="TES_NAM" String="Toggle Edge Scrolling" />
     <Translation ID="TES_DESC" String="Fügt ein Tastenkürzel und einen UUI Button und das Rand-Scrollen ingame an- und auszuschalten." />
+    <Translation ID="TES_OPT_DOS" String="Deaktiviere das automatische Rand-Scrollen Automatically beim Laden des Spiels" />
     <Translation ID="TRN_CHOICE" String="Sprache einstellen" />
     <Translation ID="TRN_SYS" String="Systemsprache verwenden" />
     <Translation ID="KEY_KEY" String="Tastenkürzel" />

@@ -1,3 +1,8 @@
-﻿Version 1.0.1:
+﻿Version 1.1:
+
+- Add option to automatically disable edge scrolling on game load
+
+
+Version 1.0.1:
 
 - Improve hotkey detection
