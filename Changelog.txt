@@ -1,6 +1,6 @@
 ﻿Version 1.1:
 
-- Add option to automatically disable edge scrolling on game load
+- Add option to automatically turn off edge scrolling on game load
 
 
 Version 1.0.1:
