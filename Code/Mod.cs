@@ -7,7 +7,7 @@ namespace ToggleEdgeScrolling
     public class TESMod : IUserMod
     {
         public static string ModName => "Toggle Edge Scrolling";
-        public static string Version => "1.1";
+        public static string Version => "1.1.1";
 
         public string Name => ModName + " " + Version;
         public string Description => Translations.Translate("TES_DESC");
