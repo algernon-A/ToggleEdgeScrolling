@@ -1,4 +1,7 @@
-﻿Version 1.1:
+﻿- Move settings file location from application directory to user directory
+
+
+Version 1.1:
 
 - Add option to automatically turn off edge scrolling on game load
 

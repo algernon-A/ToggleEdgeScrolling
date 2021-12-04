@@ -17,6 +17,14 @@ namespace ToggleEdgeScrolling
         [XmlIgnore]
         private static readonly string SettingsFileName = "ToggleEdgeScrolling.xml";
 
+        // User settings directory.
+        [XmlIgnore]
+        private static readonly string UserSettingsDir = ColossalFramework.IO.DataLocation.localApplicationData;
+
+        // Full userdir settings file name.
+        [XmlIgnore]
+        private static readonly string SettingsFile = Path.Combine(UserSettingsDir, SettingsFileName);
+
 
         // SavedInputKey reference for communicating with UUI.
         [XmlIgnore]
@@ -97,22 +105,28 @@ namespace ToggleEdgeScrolling
         {
             try
             {
-                // Check to see if configuration file exists.
-                if (File.Exists(SettingsFileName))
+                // Attempt to read new settings file (in user settings directory).
+                string fileName = SettingsFile;
+                if (!File.Exists(fileName))
                 {
-                    // Read it.
-                    using (StreamReader reader = new StreamReader(SettingsFileName))
+                    // No settings file in user directory; use application directory instead.
+                    fileName = SettingsFileName;
+
+                    if (!File.Exists(fileName))
                     {
-                        XmlSerializer xmlSerializer = new XmlSerializer(typeof(ModSettings));
-                        if (!(xmlSerializer.Deserialize(reader) is ModSettings settingsFile))
-                        {
-                            Logging.Error("couldn't deserialize settings file");
-                        }
+                        Logging.Message("no settings file found");
+                        return;
                     }
                 }
-                else
+
+                // Read settings file.
+                using (StreamReader reader = new StreamReader(fileName))
                 {
-                    Logging.Message("no settings file found");
+                    XmlSerializer xmlSerializer = new XmlSerializer(typeof(ModSettings));
+                    if (!(xmlSerializer.Deserialize(reader) is ModSettings settingsFile))
+                    {
+                        Logging.Error("couldn't deserialize settings file");
+                    }
                 }
             }
             catch (Exception e)
@@ -129,11 +143,17 @@ namespace ToggleEdgeScrolling
         {
             try
             {
-                // Pretty straightforward.  Serialisation is within GBRSettingsFile class.
-                using (StreamWriter writer = new StreamWriter(SettingsFileName))
+                // Pretty straightforward.
+                using (StreamWriter writer = new StreamWriter(SettingsFile))
                 {
                     XmlSerializer xmlSerializer = new XmlSerializer(typeof(ModSettings));
                     xmlSerializer.Serialize(writer, new ModSettings());
+                }
+
+                // Cleaning up after ourselves - delete any old config file in the application direcotry.
+                if (File.Exists(SettingsFileName))
+                {
+                    File.Delete(SettingsFileName);
                 }
             }
             catch (Exception e)
