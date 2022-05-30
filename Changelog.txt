@@ -1,7 +1,7 @@
 ﻿Version 1.1.2:
 
-- Convert to UUI hotkey detection
-- Update bundled UUI
+- Convert to UUI hotkey detection and update bundled UUI
+- Automatically refresh options panel on language change
 
 
 Version 1.1.1:

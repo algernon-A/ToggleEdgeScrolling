@@ -18,6 +18,9 @@ namespace ToggleEdgeScrolling
 
             // Setup edge scrolling.
             EdgeScrolling.Setup();
+
+            // Set up options panel event handler.
+            OptionsPanel.OptionsEventHook();
         }
 
 

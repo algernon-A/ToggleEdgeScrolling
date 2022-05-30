@@ -20,6 +20,18 @@ namespace ToggleEdgeScrolling
         {
             // Load the settings file.
             ModSettings.Load();
+
+            // Attaching options panel event hook - check to see if UIView is ready.
+            if (UIView.GetAView() != null)
+            {
+                // It's ready - attach the hook now.
+                OptionsPanel.OptionsEventHook();
+            }
+            else
+            {
+                // Otherwise, queue the hook for when the intro's finished loading.
+                LoadingManager.instance.m_introLoaded += OptionsPanel.OptionsEventHook;
+            }
         }
 
 
@@ -28,17 +40,9 @@ namespace ToggleEdgeScrolling
         /// </summary>
         public void OnSettingsUI(UIHelperBase helper)
         {
-            // Language options.
-            UIHelperBase languageGroup = helper.AddGroup(Translations.Translate("TRN_CHOICE"));
-            UIDropDown languageDropDown = (UIDropDown)languageGroup.AddDropdown(Translations.Translate("TRN_CHOICE"), Translations.LanguageList, Translations.Index, (value) => { Translations.Index = value; ModSettings.Save(); });
-            languageDropDown.autoSize = false;
-            languageDropDown.width = 270f;
-
-            // Tool activation hotkey.
-            languageDropDown.parent.parent.gameObject.AddComponent<OptionsKeymapping>();
-
-            // Disable scrolling on load.
-            helper.AddCheckbox(Translations.Translate("TES_OPT_DOS"), ModSettings.disableOnStart, (value) => { ModSettings.disableOnStart = value; ModSettings.Save(); });
+            // Setup options panel reference.
+            OptionsPanel.optionsPanel = ((UIHelper)helper).self as UIScrollablePanel;
+            OptionsPanel.optionsPanel.autoLayout = false;
         }
     }
 }
