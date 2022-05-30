@@ -36,15 +36,12 @@ namespace ToggleEdgeScrolling
                     groupName: null, // default group
                     tooltip: Translations.Translate("TES_NAM"),
                     icon: UUIHelpers.LoadTexture(UUIHelpers.GetFullPath<TESMod>("Resources", "TES-UUI.png")),
-                    onToggle: (value) => SetEdgeScrolling(value)
-                    //hotkeys: new UUIHotKeys { ActivationKey = ModSettings.ToggleSavedKey }
+                    onToggle: (value) => SetEdgeScrolling(value),
+                    hotkeys: new UUIHotKeys { ActivationKey = ModSettings.UUIKey }
                     );
 
                 // Set UUI button initial state.
                 uuiButton.IsPressed = edgeScrollSavedBool;
-
-                // Activate hotkey.
-                UIThreading.Operating = true;
             }
             else
             {

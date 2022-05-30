@@ -1,4 +1,8 @@
-﻿Version 1.1.1:
+﻿- Convert to UUI hotkey detection
+- Update bundled UUI
+
+
+Version 1.1.1:
 
 - Move settings file location from application directory to user directory
 

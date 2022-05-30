@@ -27,9 +27,6 @@ namespace ToggleEdgeScrolling
         public override void OnLevelUnloading()
         {
             base.OnLevelUnloading();
-
-            // Disable hotkey.
-            UIThreading.Operating = false;
         }
     }
 }

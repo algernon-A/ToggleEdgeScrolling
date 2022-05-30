@@ -46,8 +46,8 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="UnifiedUILib">
-      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\workshop\content\255710\2255219025\UnifiedUILib.dll</HintPath>
+    <Reference Include="UnifiedUILib, Version=2.2.9.20126, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\UnifiedUILib.2.2.9\lib\net35\UnifiedUILib.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
       <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Cities_Skylines\Cities_Data\Managed\UnityEngine.dll</HintPath>
@@ -61,7 +61,6 @@
     <Compile Include="Code\Settings\OptionsKeymapping.cs" />
     <Compile Include="Code\TranslationFramework\TranslationFramework.cs" />
     <Compile Include="Code\TranslationFramework\TranslationXML.cs" />
-    <Compile Include="Code\UIThreading.cs" />
     <Compile Include="Code\Utils\Logging.cs" />
     <Compile Include="Code\Utils\ModUtils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -69,7 +68,6 @@
   <ItemGroup>
     <Content Include="Changelog.txt" />
     <Content Include="Images\PreviewImage.png" />
-    <Content Include="Libraries\UnifiedUILib.dll" />
     <Content Include="Resources\TES-UUI.png" />
     <Content Include="License.txt" />
     <Content Include="Translations\de.xml" />
@@ -77,6 +75,9 @@
     <Content Include="Translations\en.xml" />
     <Content Include="Translations\es.xml" />
     <Content Include="Translations\ja.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

@@ -25,10 +25,9 @@ namespace ToggleEdgeScrolling
         [XmlIgnore]
         private static readonly string SettingsFile = Path.Combine(UserSettingsDir, SettingsFileName);
 
-
-        // SavedInputKey reference for communicating with UUI.
+        // UUI hotkey.
         [XmlIgnore]
-        private static readonly SavedInputKey uuiSavedKey = new SavedInputKey("Toggle Edge Srolling hotkey", "Toggle Edge Srolling hotkey", key: KeyCode.S, control: false, shift: true, alt: true, false);
+        private static readonly UnsavedInputKey uuiKey = new UnsavedInputKey(name: "Toggle Edge Scrolling hotkey", keyCode: KeyCode.S, control: false, shift: true, alt: true);
 
         // Automatically disable edge scrolling on game load.
         [XmlIgnore]
@@ -48,24 +47,12 @@ namespace ToggleEdgeScrolling
         [XmlElement("ToggleKey")]
         public KeyBinding ToggleKey
         {
-            get
-            {
-                return new KeyBinding
-                {
-                    keyCode = (int)ToggleSavedKey.Key,
-                    control = ToggleSavedKey.Control,
-                    shift = ToggleSavedKey.Shift,
-                    alt = ToggleSavedKey.Alt
-                };
-            }
-            set
-            {
-                uuiSavedKey.Key = (KeyCode)value.keyCode;
-                uuiSavedKey.Control = value.control;
-                uuiSavedKey.Shift = value.shift;
-                uuiSavedKey.Alt = value.alt;
-            }
+            get => uuiKey.KeyBinding;
+
+            set => uuiKey.KeyBinding = value;
         }
+
+
         /// <summary>
         // Automatically disable edge scrolling on load.
         /// </summary>
@@ -79,10 +66,10 @@ namespace ToggleEdgeScrolling
 
 
         /// <summary>
-        /// Toggle hotkey as ColossalFramework SavedInputKey.
+        /// Current hotkey as UUI UnsavedInputKey.
         /// </summary>
         [XmlIgnore]
-        internal static SavedInputKey ToggleSavedKey => uuiSavedKey;
+        internal static UnsavedInputKey UUIKey => uuiKey;
 
 
         /// <summary>
@@ -92,9 +79,9 @@ namespace ToggleEdgeScrolling
         [XmlIgnore]
         internal static InputKey CurrentHotkey
         {
-            get => uuiSavedKey.value;
+            get => uuiKey.value;
 
-            set => uuiSavedKey.value = value;
+            set => uuiKey.value = value;
         }
 
 
@@ -180,5 +167,49 @@ namespace ToggleEdgeScrolling
 
         [XmlAttribute("Alt")]
         public bool alt;
+
+
+        /// <summary>
+        /// Encode keybinding as saved input key for UUI.
+        /// </summary>
+        /// <returns></returns>
+        internal InputKey Encode() => SavedInputKey.Encode((KeyCode)keyCode, control, shift, alt);
+    }
+
+
+    /// <summary>
+    /// UUI unsaved input key.
+    /// </summary>
+    public class UnsavedInputKey : UnifiedUI.Helpers.UnsavedInputKey
+    {
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="name">Reference name</param>
+        /// <param name="keyCode">Keycode</param>
+        /// <param name="control">Control modifier key status</param>
+        /// <param name="shift">Shift modifier key status</param>
+        /// <param name="alt">Alt modifier key status</param>
+        public UnsavedInputKey(string name, KeyCode keyCode, bool control, bool shift, bool alt) :
+            base(keyName: name, modName: "Repaint", Encode(keyCode, control: control, shift: shift, alt: alt))
+        {
+        }
+
+
+        /// <summary>
+        /// Called by UUI when a key conflict is resolved.
+        /// Used here to save the new key setting.
+        /// </summary>
+        public override void OnConflictResolved() => ModSettings.Save();
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public KeyBinding KeyBinding
+        {
+            get => new KeyBinding { keyCode = (int)Key, control = Control, shift = Shift, alt = Alt };
+            set => this.value = value.Encode();
+        }
     }
 }
