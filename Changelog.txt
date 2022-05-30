@@ -1,4 +1,6 @@
-﻿- Convert to UUI hotkey detection
+﻿Version 1.1.2:
+
+- Convert to UUI hotkey detection
 - Update bundled UUI
 
 
