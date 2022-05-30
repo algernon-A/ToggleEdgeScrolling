@@ -71,6 +71,7 @@
     <Content Include="Resources\TES-UUI.png" />
     <Content Include="License.txt" />
     <Content Include="Translations\de.xml" />
+    <Content Include="Translations\zh-TW.xml" />
     <Content Include="Translations\zh.xml" />
     <Content Include="Translations\en.xml" />
     <Content Include="Translations\es.xml" />
