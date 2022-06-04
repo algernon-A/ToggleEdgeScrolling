@@ -120,6 +120,11 @@ namespace ToggleEdgeScrolling
                     languageDropDown.parent.relativePosition = new Vector2(LeftMargin, currentY);
                     currentY += languageDropDown.parent.height + GroupMargin;
 
+                    // Hotkey control.
+                    OptionsKeymapping keyMapping = languageDropDown.parent.parent.gameObject.AddComponent<OptionsKeymapping>();
+                    keyMapping.uIPanel.relativePosition = new Vector2(LeftMargin, currentY);
+                    currentY += keyMapping.uIPanel.height + GroupMargin;
+
                     UICheckBox disableOnStartCheck = AddPlainCheckBox(panel, Margin, currentY, Translations.Translate("TES_OPT_DOS"));
                     disableOnStartCheck.isChecked = ModSettings.disableOnStart;
                     disableOnStartCheck.eventCheckChanged += (control, isChecked) => { ModSettings.disableOnStart = isChecked; };
