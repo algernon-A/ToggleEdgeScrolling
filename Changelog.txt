@@ -1,4 +1,9 @@
-﻿Version 1.1.2:
+﻿Version 1.1.3:
+
+- Fix Hotkey selection not displaying in options panel
+
+
+Version 1.1.2:
 
 - Convert to UUI hotkey detection and update bundled UUI
 - Automatically refresh options panel on language change
