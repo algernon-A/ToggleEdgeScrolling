@@ -1,4 +1,7 @@
-﻿Version 1.1.3:
+﻿- Update UUI
+
+
+Version 1.1.3:
 
 - Fix Hotkey selection not displaying in options panel
 
