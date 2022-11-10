@@ -1,35 +1,28 @@
-﻿using ICities;
-
+﻿// <copyright file="Loading.cs" company="algernon (K. Algernon A. Sheppard)">
+// Copyright (c) algernon (K. Algernon A. Sheppard). All rights reserved.
+// Licensed under the MIT license. See LICENSE.txt file in the project root for full license information.
+// </copyright>
 
 namespace ToggleEdgeScrolling
 {
+    using AlgernonCommons;
+    using ICities;
+
     /// <summary>
     /// Main loading class: the mod runs from here.
     /// </summary>
-    public class Loading : LoadingExtensionBase
+    public class Loading : LoadingBase<OptionsPanel>
     {
         /// <summary>
-        /// Called by the game when level loading is complete.
+        /// Performs any actions upon successful level loading completion.
         /// </summary>
-        /// <param name="mode">Loading mode (e.g. game, editor, scenario, etc.)</param>
-        public override void OnLevelLoaded(LoadMode mode)
+        /// <param name="mode">Loading mode (e.g. game, editor, scenario, etc.).</param>
+        protected override void LoadedActions(LoadMode mode)
         {
-            base.OnLevelLoaded(mode);
+            base.LoadedActions(mode);
 
             // Setup edge scrolling.
             EdgeScrolling.Setup();
-
-            // Set up options panel event handler.
-            OptionsPanel.OptionsEventHook();
-        }
-
-
-        /// <summary>
-        /// Called by the game when exiting a level.
-        /// </summary>
-        public override void OnLevelUnloading()
-        {
-            base.OnLevelUnloading();
         }
     }
 }

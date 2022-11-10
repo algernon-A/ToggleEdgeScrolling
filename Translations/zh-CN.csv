@@ -1,0 +1,8 @@
+LANGUAGE,简体中文
+TES_NAM,开启/关闭边缘滚动
+TES_DESC,在游戏内启用热键和在UUI面板中提供按钮以开启/关闭边缘滚动。
+TES_OPT_DOS,在游戏加载时自动关闭边缘滚动功能
+TRN_CHOICE,语言设定
+LANGUAGE_GAME,使用游戏默认语言
+KEY_KEY,热键
+PRESS_ANY_KEY,请按任意键

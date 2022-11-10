@@ -1,0 +1,8 @@
+LANGUAGE,Deutsch
+TES_NAM,Toggle Edge Scrolling
+TES_DESC,Fügt ein Tastenkürzel und einen UUI Button und das Rand-Scrollen ingame an- und auszuschalten.
+TES_OPT_DOS,Deaktiviere das automatische Rand-Scrollen Automatically beim Laden des Spiels
+TRN_CHOICE,Sprache einstellen
+LANGUAGE_GAME,Systemsprache verwenden
+KEY_KEY,Tastenkürzel
+PRESS_ANY_KEY,Drücke eine beliebige Taste

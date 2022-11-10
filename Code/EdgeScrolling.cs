@@ -1,10 +1,16 @@
-﻿using System.Reflection;
-using ColossalFramework;
-using UnifiedUI.Helpers;
-
+﻿// <copyright file="EdgeScrolling.cs" company="algernon (K. Algernon A. Sheppard)">
+// Copyright (c) algernon (K. Algernon A. Sheppard). All rights reserved.
+// Licensed under the MIT license. See LICENSE.txt file in the project root for full license information.
+// </copyright>
 
 namespace ToggleEdgeScrolling
 {
+    using System.Reflection;
+    using AlgernonCommons;
+    using AlgernonCommons.Translation;
+    using ColossalFramework;
+    using UnifiedUI.Helpers;
+
     /// <summary>
     /// Static class to manage edge scrolling.
     /// </summary>
@@ -32,12 +38,12 @@ namespace ToggleEdgeScrolling
 
                 // Add UUI button.
                 uuiButton = UUIHelpers.RegisterCustomButton(
-                    name: TESMod.ModName,
+                    name: Mod.Instance.Name,
                     groupName: null, // default group
                     tooltip: Translations.Translate("TES_NAM"),
-                    icon: UUIHelpers.LoadTexture(UUIHelpers.GetFullPath<TESMod>("Resources", "TES-UUI.png")),
+                    icon: UUIHelpers.LoadTexture(UUIHelpers.GetFullPath<Mod>("Resources", "TES-UUI.png")),
                     onToggle: (value) => SetEdgeScrolling(value),
-                    hotkeys: new UUIHotKeys { ActivationKey = ModSettings.UUIKey }
+                    hotkeys: new UUIHotKeys { ActivationKey = ModSettings.ToggleKey }
                     );
 
                 // Set UUI button initial state.

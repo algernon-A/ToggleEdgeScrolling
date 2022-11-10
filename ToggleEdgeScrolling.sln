@@ -5,6 +5,8 @@ VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToggleEdgeScrolling", "ToggleEdgeScrolling.csproj", "{067FE5DD-F005-412C-B44E-E876BB32FC2F}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "AlgernonCommonsShared", "..\AlgernonCommons\AlgernonCommonsShared.shproj", "{25AEF446-6F0D-43A8-BB84-D1306789B68C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,7 @@ Global
 		SolutionGuid = {B119AA32-EFB5-44CC-A55A-D02718B13E62}
 	EndGlobalSection
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		..\AlgernonCommons\AlgernonCommonsPatchingShared.projitems*{067fe5dd-f005-412c-b44e-e876bb32fc2f}*SharedItemsImports = 5
+		..\AlgernonCommons\AlgernonCommonsShared.projitems*{067fe5dd-f005-412c-b44e-e876bb32fc2f}*SharedItemsImports = 5
+		..\AlgernonCommons\AlgernonCommonsShared.projitems*{25aef446-6f0d-43a8-bb84-d1306789b68c}*SharedItemsImports = 13
 	EndGlobalSection
 EndGlobal
