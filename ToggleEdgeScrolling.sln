@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31727.386
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToggleEdgeScrolling", "ToggleEdgeScrolling.csproj", "{067FE5DD-F005-412C-B44E-E876BB32FC2F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToggleEdgeScrolling", "ToggleEdgeScrolling.csproj", "{067FE5DD-F005-412C-B44E-E876BB32FC2F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,5 +21,8 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B119AA32-EFB5-44CC-A55A-D02718B13E62}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		..\AlgernonCommons\AlgernonCommonsPatchingShared.projitems*{067fe5dd-f005-412c-b44e-e876bb32fc2f}*SharedItemsImports = 5
 	EndGlobalSection
 EndGlobal
