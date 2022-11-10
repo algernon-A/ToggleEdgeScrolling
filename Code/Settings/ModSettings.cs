@@ -14,7 +14,7 @@ namespace ToggleEdgeScrolling
     /// <summary>
     /// Global mod settings.
     /// </summary>
-	[XmlRoot("ToggleEdgeScrolling")]
+    [XmlRoot("ToggleEdgeScrolling")]
     public class ModSettings : SettingsXMLBase
     {
         // Settings file name.
@@ -33,12 +33,9 @@ namespace ToggleEdgeScrolling
         [XmlIgnore]
         private static readonly UnsavedInputKey UUIKey = new UnsavedInputKey(name: "Toggle Edge Scrolling hotkey", keyCode: KeyCode.S, control: false, shift: true, alt: true);
 
-        // Automatically disable edge scrolling on game load.
-        [XmlIgnore]
-        internal static bool disableOnStart = false;
-
-
-        // Hotkey element.
+        /// <summary>
+        /// Gets or sets the toggle key.
+        /// </summary>
         [XmlElement("ToggleKey")]
         public Keybinding XMLToggleKey
         {
@@ -47,17 +44,22 @@ namespace ToggleEdgeScrolling
             set => UUIKey.Keybinding = value;
         }
 
-
         /// <summary>
-        // Automatically disable edge scrolling on load.
+        /// Gets or sets a value indicating whether edge scrolling should be automatically disabled on start.
         /// </summary>
         [XmlElement("DisableOnStart")]
         public bool XMLDisableOnStart
         {
-            get => disableOnStart;
+            get => DisableOnStart;
 
-            set => disableOnStart = value;
+            set => DisableOnStart = value;
         }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether edge scrolling should be automatically disabled on start.
+        /// </summary>
+        [XmlIgnore]
+        internal static bool DisableOnStart { get; set; } = false;
 
         /// <summary>
         /// Gets the current hotkey as a UUI UnsavedInputKey.

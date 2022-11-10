@@ -17,9 +17,8 @@ namespace ToggleEdgeScrolling
     internal static class EdgeScrolling
     {
         // Reference to game edge scrolling SavedBool.
-        private static SavedBool edgeScrollSavedBool;
-        private static UUICustomButton uuiButton;
-
+        private static SavedBool s_edgeScrollSavedBool;
+        private static UUICustomButton s_uuiButton;
 
         /// <summary>
         /// Performs setup.
@@ -31,23 +30,22 @@ namespace ToggleEdgeScrolling
             if (edgeScrolling?.GetValue(Singleton<CameraController>.instance) is SavedBool savedBool)
             {
                 // Set reference.
-                edgeScrollSavedBool = savedBool;
+                s_edgeScrollSavedBool = savedBool;
 
                 // Disable edge scrolling on startup, if we're doing that.
-                savedBool.value &= !ModSettings.disableOnStart;
+                savedBool.value &= !ModSettings.DisableOnStart;
 
                 // Add UUI button.
-                uuiButton = UUIHelpers.RegisterCustomButton(
+                s_uuiButton = UUIHelpers.RegisterCustomButton(
                     name: Mod.Instance.Name,
                     groupName: null, // default group
                     tooltip: Translations.Translate("TES_NAM"),
                     icon: UUIHelpers.LoadTexture(UUIHelpers.GetFullPath<Mod>("Resources", "TES-UUI.png")),
                     onToggle: (value) => SetEdgeScrolling(value),
-                    hotkeys: new UUIHotKeys { ActivationKey = ModSettings.ToggleKey }
-                    );
+                    hotkeys: new UUIHotKeys { ActivationKey = ModSettings.ToggleKey });
 
                 // Set UUI button initial state.
-                uuiButton.IsPressed = edgeScrollSavedBool;
+                s_uuiButton.IsPressed = s_edgeScrollSavedBool;
             }
             else
             {
@@ -55,24 +53,22 @@ namespace ToggleEdgeScrolling
             }
         }
 
-
         /// <summary>
         /// Toggles the current edge scrolling state.
         /// </summary>
-        internal static void ToggleEdgeScrolling() => SetEdgeScrolling(!edgeScrollSavedBool);
-
+        internal static void ToggleEdgeScrolling() => SetEdgeScrolling(!s_edgeScrollSavedBool);
 
         /// <summary>
         /// Sets/disables edge scrolling.
         /// </summary>
-        /// <param name="scrollingEnabled">True to enable edge scrolling, false to disable</param>
+        /// <param name="scrollingEnabled">True to enable edge scrolling, false to disable.</param>
         private static void SetEdgeScrolling(bool scrollingEnabled)
         {
             // Set game value.
-            edgeScrollSavedBool.value = scrollingEnabled;
+            s_edgeScrollSavedBool.value = scrollingEnabled;
 
             // Update button state.
-            uuiButton.IsPressed = edgeScrollSavedBool;
+            s_uuiButton.IsPressed = s_edgeScrollSavedBool;
         }
     }
 }

@@ -14,7 +14,6 @@ namespace ToggleEdgeScrolling
     /// </summary>
     public sealed class Mod : OptionsMod<OptionsPanel>, IUserMod
     {
-
         /// <summary>
         /// Gets the mod's base display name (name only).
         /// </summary>
