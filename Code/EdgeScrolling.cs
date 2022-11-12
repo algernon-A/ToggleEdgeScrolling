@@ -61,7 +61,7 @@ namespace ToggleEdgeScrolling
                 s_uuiButton = UUIHelpers.RegisterCustomButton(
                     name: Mod.Instance.Name,
                     groupName: null, // default group
-                    tooltip: Translations.Translate("TES_NAM"),
+                    tooltip: Translations.Translate("MOD_NAME"),
                     icon: UUIHelpers.LoadTexture(UUIHelpers.GetFullPath<Mod>("Resources", "TES-UUI.png")),
                     onToggle: (value) => SetEdgeScrolling(value),
                     hotkeys: new UUIHotKeys { ActivationKey = ModSettings.ToggleKey });

@@ -1,9 +1,9 @@
-LANGUAGE,English
-TES_NAM,Toggle Edge Scrolling
-TES_DESC,Adds a hotkey and UUI button to toggle edge scrolling in-game.
-TES_OPT_DOS,Automatically turn off edge scrolling on game load
-TES_OPT_DIB,Automatically turn off edge scrolling in background
-TRN_CHOICE,Set language
-LANGUAGE_GAME,Use system language
-KEY_KEY,Hotkey
-PRESS_ANY_KEY,Press any key
+"LANGUAGE","English"
+"MOD_NAME","Toggle Edge Scrolling"
+"MOD_DESCRIPTION","Adds a hotkey and UUI button to toggle edge scrolling in-game."
+"DISABLE_LOAD","Automatically turn off edge scrolling on game load"
+"DISABLE_BACKGROUND","Automatically turn off edge scrolling in background"
+"LANGUAGE_CHOICE","Set language"
+"LANGUAGE_GAME","Use game language"
+"HOTKEY","Hotkey"
+"PRESS_ANY_KEY","Press any key"

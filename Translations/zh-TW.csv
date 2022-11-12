@@ -1,9 +1,9 @@
 CODE,zh-TW
 LANGUAGE,正體中文
-TES_NAM,邊緣滾動切換器 (Toggle Edge Scrolling)
-TES_DESC,添加一個快鍵與 UnifiedUI 按鈕在遊戲中自由啟用邊緣滾動功能。
-TES_OPT_DOS,遊戲加載時自動關閉邊緣滾動
-TRN_CHOICE,語言設置
+MOD_NAME,邊緣滾動切換器 (Toggle Edge Scrolling)
+MOD_DESCRIPTION,添加一個快鍵與 UnifiedUI 按鈕在遊戲中自由啟用邊緣滾動功能。
+DISABLE_LOAD,遊戲加載時自動關閉邊緣滾動
+LANGUAGE_CHOICE,語言設置
 LANGUAGE_GAME,使用遊戲預設語言
-KEY_KEY,快鍵
+HOTKEY,快鍵
 PRESS_ANY_KEY,按任意鍵

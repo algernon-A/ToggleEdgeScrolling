@@ -29,7 +29,7 @@ namespace ToggleEdgeScrolling
             float currentY = Margin;
 
             // Language choice.
-            UIDropDown languageDropDown = UIDropDowns.AddPlainDropDown(this, LeftMargin, currentY, Translations.Translate("TRN_CHOICE"), Translations.LanguageList, Translations.Index);
+            UIDropDown languageDropDown = UIDropDowns.AddPlainDropDown(this, LeftMargin, currentY, Translations.Translate("LANGUAGE_CHOICE"), Translations.LanguageList, Translations.Index);
             languageDropDown.eventSelectedIndexChanged += (c, index) =>
             {
                 Translations.Index = index;
@@ -43,13 +43,13 @@ namespace ToggleEdgeScrolling
             currentY += uuiKeymapping.Panel.height + GroupMargin;
 
             // Disable on start checkbox.
-            UICheckBox disableOnStartCheck = UICheckBoxes.AddPlainCheckBox(this, Margin, currentY, Translations.Translate("TES_OPT_DOS"));
+            UICheckBox disableOnStartCheck = UICheckBoxes.AddPlainCheckBox(this, Margin, currentY, Translations.Translate("DISABLE_LOAD"));
             disableOnStartCheck.isChecked = ModSettings.DisableOnStart;
             disableOnStartCheck.eventCheckChanged += (c, isChecked) => { ModSettings.DisableOnStart = isChecked; };
             currentY += disableOnStartCheck.height + Margin;
 
             // Disable on start checkbox.
-            UICheckBox disableInBackgroundCheck = UICheckBoxes.AddPlainCheckBox(this, Margin, currentY, Translations.Translate("TES_OPT_DIB"));
+            UICheckBox disableInBackgroundCheck = UICheckBoxes.AddPlainCheckBox(this, Margin, currentY, Translations.Translate("DISABLE_BACKGROUND"));
             disableInBackgroundCheck.isChecked = EdgeScrolling.DisableInBackground;
             disableInBackgroundCheck.eventCheckChanged += (c, isChecked) => { EdgeScrolling.DisableInBackground = isChecked; };
         }

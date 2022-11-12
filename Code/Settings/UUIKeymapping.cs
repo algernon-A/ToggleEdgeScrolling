@@ -20,7 +20,7 @@ namespace ToggleEdgeScrolling
         public UUIKeymapping()
         {
             // Set label and button text.
-            Label = Translations.Translate("KEY_KEY");
+            Label = Translations.Translate("HOTKEY");
             ButtonLabel = SavedInputKey.ToLocalizedString("KEYNAME", KeySetting);
         }
 

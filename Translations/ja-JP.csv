@@ -1,8 +1,8 @@
 LANGUAGE,日本語
-TES_NAM,Toggle Edge Scrolling
-TES_DESC,ホットキーとUUI MODにボタンを追加して、ゲーム内のエッジスクロールを切り替えます
-TES_OPT_DOS,ゲームロード時にエッジスクロールを自動的に無効化
-TRN_CHOICE,言語設定
+MOD_NAME,Toggle Edge Scrolling
+MOD_DESCRIPTION,ホットキーとUUI MODにボタンを追加して、ゲーム内のエッジスクロールを切り替えます
+DISABLE_LOAD,ゲームロード時にエッジスクロールを自動的に無効化
+LANGUAGE_CHOICE,言語設定
 LANGUAGE_GAME,システム言語を使用
-KEY_KEY,ホットキー
+HOTKEY,ホットキー
 PRESS_ANY_KEY,Press any key

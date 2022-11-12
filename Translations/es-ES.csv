@@ -1,8 +1,8 @@
 LANGUAGE,Español
-TES_NAM,Toggle Edge Scrolling
-TES_DESC,Agrega un atajo y botón a UUI para cambiar el desplazamiento en el margen en juego.
-TES_OPT_DOS,Deshabilita automáticamente el desplazamiento en el margen al cargar el juego
-TRN_CHOICE,Elegir idioma
+MOD_NAME,Toggle Edge Scrolling
+MOD_DESCRIPTION,Agrega un atajo y botón a UUI para cambiar el desplazamiento en el margen en juego.
+DISABLE_LOAD,Deshabilita automáticamente el desplazamiento en el margen al cargar el juego
+LANGUAGE_CHOICE,Elegir idioma
 LANGUAGE_GAME,Usa el idioma del juego
-KEY_KEY,Atajo
+HOTKEY,Atajo
 PRESS_ANY_KEY,Presiona cualquier tecla
