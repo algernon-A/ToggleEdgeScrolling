@@ -9,16 +9,38 @@ namespace ToggleEdgeScrolling
     using AlgernonCommons;
     using AlgernonCommons.Translation;
     using ColossalFramework;
+    using ColossalFramework.UI;
     using UnifiedUI.Helpers;
+    using UnityEngine;
 
     /// <summary>
-    /// Static class to manage edge scrolling.
+    /// Class to manage edge scrolling.
     /// </summary>
-    internal static class EdgeScrolling
+    internal class EdgeScrolling : MonoBehaviour
     {
         // Reference to game edge scrolling SavedBool.
         private static SavedBool s_edgeScrollSavedBool;
         private static UUICustomButton s_uuiButton;
+
+        // Gameobject reference.
+        private static GameObject s_gameObject;
+
+        /// <summary>
+        /// Gets or sets a value indicating whether edge scrolling should be automatically disabled when the application loses focus.
+        /// </summary>
+        internal static bool DisableInBackground { get; set; } = true;
+
+        /// <summary>
+        /// Called by Unity when the application focus changes.
+        /// </summary>
+        /// <param name="hasFocus">True if the game is now focussed, false otherwise.</param>
+        public void OnApplicationFocus(bool hasFocus)
+        {
+            if (DisableInBackground)
+            {
+                s_edgeScrollSavedBool.value = hasFocus & s_uuiButton.IsPressed;
+            }
+        }
 
         /// <summary>
         /// Performs setup.
@@ -46,6 +68,11 @@ namespace ToggleEdgeScrolling
 
                 // Set UUI button initial state.
                 s_uuiButton.IsPressed = s_edgeScrollSavedBool;
+
+                // Attach focus detector.
+                s_gameObject = new GameObject("Toggle Edge Scrolling");
+                s_gameObject.transform.parent = UIView.GetAView().transform;
+                s_gameObject.AddComponent<EdgeScrolling>();
             }
             else
             {

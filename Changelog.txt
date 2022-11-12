@@ -1,4 +1,5 @@
-﻿- Implement AlgernonCommons
+﻿- Add option to automatically disable edge scrolling when the game loses focus
+- Implement AlgernonCommons
 - Update UUI
 
 

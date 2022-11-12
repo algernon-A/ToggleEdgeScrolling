@@ -46,6 +46,12 @@ namespace ToggleEdgeScrolling
             UICheckBox disableOnStartCheck = UICheckBoxes.AddPlainCheckBox(this, Margin, currentY, Translations.Translate("TES_OPT_DOS"));
             disableOnStartCheck.isChecked = ModSettings.DisableOnStart;
             disableOnStartCheck.eventCheckChanged += (c, isChecked) => { ModSettings.DisableOnStart = isChecked; };
+            currentY += disableOnStartCheck.height + Margin;
+
+            // Disable on start checkbox.
+            UICheckBox disableInBackgroundCheck = UICheckBoxes.AddPlainCheckBox(this, Margin, currentY, Translations.Translate("TES_OPT_DIB"));
+            disableInBackgroundCheck.isChecked = EdgeScrolling.DisableInBackground;
+            disableInBackgroundCheck.eventCheckChanged += (c, isChecked) => { EdgeScrolling.DisableInBackground = isChecked; };
         }
     }
 }

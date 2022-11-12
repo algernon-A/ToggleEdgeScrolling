@@ -56,6 +56,17 @@ namespace ToggleEdgeScrolling
         }
 
         /// <summary>
+        /// Gets or sets a value indicating whether edge scrolling should be automatically disabled when the application loses focus.
+        /// </summary>
+        [XmlElement("DisableInBackground")]
+        public bool XMLDisableInBackground
+        {
+            get => EdgeScrolling.DisableInBackground;
+
+            set => EdgeScrolling.DisableInBackground = value;
+        }
+
+        /// <summary>
         /// Gets or sets a value indicating whether edge scrolling should be automatically disabled on start.
         /// </summary>
         [XmlIgnore]
