@@ -1,4 +1,6 @@
-﻿- Add option to automatically disable edge scrolling when the game loses focus
+﻿Version 1.2:
+
+- Add option to automatically disable edge scrolling when the game loses focus
 - Implement AlgernonCommons
 - Update UUI
 
