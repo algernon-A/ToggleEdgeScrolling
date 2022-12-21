@@ -1,8 +1,9 @@
-LANGUAGE,Deutsch
-MOD_NAME,Toggle Edge Scrolling
-MOD_DESCRIPTION,Fügt ein Tastenkürzel und einen UUI Button und das Rand-Scrollen ingame an- und auszuschalten.
-DISABLE_LOAD,Deaktiviere das automatische Rand-Scrollen Automatically beim Laden des Spiels
-LANGUAGE_CHOICE,Sprache einstellen
-LANGUAGE_GAME,Systemsprache verwenden
-HOTKEY,Tastenkürzel
-PRESS_ANY_KEY,Drücke eine beliebige Taste
+"LANGUAGE","Deutsch"
+"MOD_NAME","Toggle Edge Scrolling"
+"MOD_DESCRIPTION","Fügt ein Tastenkürzel und UI-Button hinzu, um das Scrollen der Karte beim Berühren des Bildrandes umzuschalten."
+"DISABLE_LOAD","Beim Laden des Spiels das Kantenscrollen automatisch ausschalten"
+"DISABLE_BACKGROUND","Wenn sich das Spiel im Hintergrund befindet, das Kantenscrollen automatisch ausschalten"
+"LANGUAGE_CHOICE","Sprache auswählen"
+"LANGUAGE_GAME","Spielsprache verwenden"
+"HOTKEY","Tastenkürzel"
+"PRESS_ANY_KEY","Drücke eine Taste"

@@ -1,9 +1,9 @@
-CODE,zh-TW
-LANGUAGE,正體中文
-MOD_NAME,邊緣滾動切換器 (Toggle Edge Scrolling)
-MOD_DESCRIPTION,添加一個快鍵與 UnifiedUI 按鈕在遊戲中自由啟用邊緣滾動功能。
-DISABLE_LOAD,遊戲加載時自動關閉邊緣滾動
-LANGUAGE_CHOICE,語言設置
-LANGUAGE_GAME,使用遊戲預設語言
-HOTKEY,快鍵
-PRESS_ANY_KEY,按任意鍵
+"LANGUAGE","正體中文"
+"MOD_NAME","Toggle Edge Scrolling"
+"MOD_DESCRIPTION","Adds a hotkey and UUI button to toggle edge scrolling in-game."
+"DISABLE_LOAD","Automatically turn off edge scrolling on game load"
+"DISABLE_BACKGROUND","Automatically turn off edge scrolling in background"
+"LANGUAGE_CHOICE","設定語系"
+"LANGUAGE_GAME","使用遊戲預設語系"
+"HOTKEY","快捷鍵"
+"PRESS_ANY_KEY","按任意键"

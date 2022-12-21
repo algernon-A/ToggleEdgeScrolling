@@ -1,8 +1,9 @@
-LANGUAGE,简体中文
-MOD_NAME,开启/关闭边缘滚动
-MOD_DESCRIPTION,在游戏内启用热键和在UUI面板中提供按钮以开启/关闭边缘滚动。
-DISABLE_LOAD,在游戏加载时自动关闭边缘滚动功能
-LANGUAGE_CHOICE,语言设定
-LANGUAGE_GAME,使用游戏默认语言
-HOTKEY,热键
-PRESS_ANY_KEY,请按任意键
+"LANGUAGE","简体中文"
+"MOD_NAME","切换边缘滚动"
+"MOD_DESCRIPTION","添加一个快捷键和 UUI 按钮来切换游戏中的边缘滚动。"
+"DISABLE_LOAD","游戏加载时自动关闭边缘滚动"
+"DISABLE_BACKGROUND","游戏在后台时自动关闭边缘滚动"
+"LANGUAGE_CHOICE","语言设定"
+"LANGUAGE_GAME","使用游戏默认语言"
+"HOTKEY","快捷键"
+"PRESS_ANY_KEY","请按任意键"
