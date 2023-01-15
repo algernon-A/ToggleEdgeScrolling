@@ -1,4 +1,7 @@
-﻿- Fix mod not loading in editors
+﻿Version 1.2.1:
+
+- Fix mod not loading in editors
+
 
 Version 1.2:
 
