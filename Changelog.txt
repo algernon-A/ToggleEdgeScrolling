@@ -1,4 +1,6 @@
-﻿Version 1.2:
+﻿- Fix mod not loading in editors
+
+Version 1.2:
 
 - Add option to automatically disable edge scrolling when the game loses focus
 - Implement AlgernonCommons

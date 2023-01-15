@@ -5,6 +5,7 @@
 
 namespace ToggleEdgeScrolling
 {
+    using System.Collections.Generic;
     using AlgernonCommons;
     using ICities;
 
@@ -13,6 +14,18 @@ namespace ToggleEdgeScrolling
     /// </summary>
     public class Loading : LoadingBase<OptionsPanel>
     {
+        /// <summary>
+        /// Gets a list of permitted loading modes.
+        /// </summary>
+        protected override List<AppMode> PermittedModes => new List<AppMode>
+        {
+            AppMode.Game,
+            AppMode.MapEditor,
+            AppMode.AssetEditor,
+            AppMode.ThemeEditor,
+            AppMode.ScenarioEditor,
+        };
+
         /// <summary>
         /// Performs any actions upon successful level loading completion.
         /// </summary>
