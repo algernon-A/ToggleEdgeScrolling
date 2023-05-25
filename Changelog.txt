@@ -1,4 +1,7 @@
-﻿Version 1.2.1:
+﻿- Update AlgernonCommons
+
+
+Version 1.2.1:
 
 - Fix mod not loading in editors
 

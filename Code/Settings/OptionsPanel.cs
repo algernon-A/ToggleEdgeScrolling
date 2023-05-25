@@ -5,6 +5,7 @@
 
 namespace ToggleEdgeScrolling
 {
+    using AlgernonCommons.Keybinding;
     using AlgernonCommons.Translation;
     using AlgernonCommons.UI;
     using ColossalFramework.UI;
@@ -13,7 +14,7 @@ namespace ToggleEdgeScrolling
     /// <summary>
     /// Toggle Edge Scrolling options panel.
     /// </summary>
-    public class OptionsPanel : UIPanel
+    public class OptionsPanel : OptionsPanelBase
     {
         // Layout constants.
         private const float Margin = 5f;
@@ -21,9 +22,9 @@ namespace ToggleEdgeScrolling
         private const float GroupMargin = 40f;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="OptionsPanel"/> class.
+        /// Performs on-demand panel setup.
         /// </summary>
-        internal OptionsPanel()
+        protected override void Setup()
         {
             autoLayout = false;
             float currentY = Margin;
@@ -38,8 +39,7 @@ namespace ToggleEdgeScrolling
             currentY += languageDropDown.parent.height + GroupMargin;
 
             // Hotkey control.
-            UUIKeymapping uuiKeymapping = gameObject.AddComponent<UUIKeymapping>();
-            uuiKeymapping.Panel.relativePosition = new Vector2(LeftMargin, currentY);
+            OptionsKeymapping uuiKeymapping = OptionsKeymapping.AddKeymapping(this, LeftMargin, currentY, Translations.Translate("HOTKEY"), ModSettings.ToggleKey.Keybinding);
             currentY += uuiKeymapping.Panel.height + GroupMargin;
 
             // Disable on start checkbox.
