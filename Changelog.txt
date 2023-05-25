@@ -1,4 +1,6 @@
-﻿- Update AlgernonCommons
+﻿Version 1.2.2:
+
+- Update AlgernonCommons
 
 
 Version 1.2.1:

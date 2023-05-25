@@ -9,7 +9,6 @@ namespace ToggleEdgeScrolling
     using AlgernonCommons.Translation;
     using AlgernonCommons.UI;
     using ColossalFramework.UI;
-    using UnityEngine;
 
     /// <summary>
     /// Toggle Edge Scrolling options panel.
