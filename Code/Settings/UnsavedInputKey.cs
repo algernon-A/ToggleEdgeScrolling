@@ -13,6 +13,8 @@ namespace ToggleEdgeScrolling
     /// </summary>
     public class UnsavedInputKey : UnifiedUI.Helpers.UnsavedInputKey
     {
+        private Keybinding _binding;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="UnsavedInputKey"/> class.
         /// </summary>
@@ -24,6 +26,7 @@ namespace ToggleEdgeScrolling
         public UnsavedInputKey(string name, KeyCode keyCode, bool control, bool shift, bool alt)
             : base(keyName: name, modName: "Toggle Edge Scrolling", Encode(keyCode, control: control, shift: shift, alt: alt))
         {
+            _binding = new Keybinding(Key, Control, Shift, Alt);
         }
 
         /// <summary>
@@ -31,8 +34,13 @@ namespace ToggleEdgeScrolling
         /// </summary>
         public Keybinding Keybinding
         {
-            get => new Keybinding(Key, Control, Shift, Alt);
-            set => this.value = value.Encode();
+            get => _binding;
+
+            set
+            {
+                _binding = value;
+                this.value = value.Encode();
+            }
         }
 
         /// <summary>
